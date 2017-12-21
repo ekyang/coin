@@ -116,7 +116,7 @@ var coinFactory = (function () {
         var krwBalance = 0;
         krwBalance = usd * krw * balance;
         total = total + krwBalance
-        $('#total').text('총 자산: ' + comma(total) + '원')
+        $('#total').text('총 자산: ' + comma(total.toFixed(0)) + '원')
 
         var x = template({
           idx: idx,
