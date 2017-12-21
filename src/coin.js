@@ -36,6 +36,12 @@ var coinFactory = (function () {
       }
     });
 
+    $('#coin-balance').on('keyup', function (e) {
+      if(e.keyCode == 13){
+        $('#btn-save').trigger('click');
+      }
+    })
+
 
     $('#btn-save').on('click', function () {
       var coinNm = $('#coin-name').val();
