@@ -19,26 +19,30 @@ var coinFactory = (function () {
 
   var start = function () {
     $('#contents').on('click', '.btn-delete', function () {
-      var dataIdx = $(this).data('idx')
-
-      var coins = Cookies.get('coins');
-      coins = coins.split('-')
-      var y = [];
-      coins.forEach(function (item, idx) {
-        if (idx != dataIdx) {
-          y.push(item);
-        }
-      });
-      Cookies.set('coins', y.join('-'), {
-        expires: 3650
-      });
-      loadCoins();
-
+      if(confirm('Are you sure?')){
+        var dataIdx = $(this).data('idx');
+        var coins = Cookies.get('coins');
+        coins = coins.split('-')
+        var y = [];
+        coins.forEach(function (item, idx) {
+          if (idx != dataIdx) {
+            y.push(item);
+          }
+        });
+        Cookies.set('coins', y.join('-'), {
+          expires: 3650
+        });
+        loadCoins();
+      }
     });
 
+
     $('#btn-save').on('click', function () {
+      var coinNm = $('#coin-name').val();
+      if(coinNm == '') return;
+      coinNm = coinNm.split(' ').join('-').split('.').join('-').toLowerCase();
       var param = {
-        coinNm: $('#coin-name').val(),
+        coinNm: coinNm,
         coinBalance: $('#coin-balance').val()
       };
 
@@ -86,12 +90,10 @@ var coinFactory = (function () {
     }
   };
 
-
   var get = function (idx, coinNm, balance) {
     $.ajax({
       url: 'https://api.coinmarketcap.com/v1/ticker/' + coinNm + '/?ref=widget&convert=ETH',
       success: function (data) {
-        console.log(data)
         var r = data[0]
         var price = r.price_eth;
         var usd = r.price_usd;
