@@ -22,14 +22,14 @@ var coinFactory = (function () {
       if(confirm('Are you sure?')){
         var dataIdx = $(this).data('idx');
         var coins = Cookies.get('coins');
-        coins = coins.split('-')
+        coins = coins.split('###')
         var y = [];
         coins.forEach(function (item, idx) {
           if (idx != dataIdx) {
             y.push(item);
           }
         });
-        Cookies.set('coins', y.join('-'), {
+        Cookies.set('coins', y.join('###'), {
           expires: 3650
         });
         loadCoins();
@@ -41,6 +41,7 @@ var coinFactory = (function () {
       var coinNm = $('#coin-name').val();
       if(coinNm == '') return;
       coinNm = coinNm.split(' ').join('-').split('.').join('-').toLowerCase();
+      console.log(coinNm)
       var param = {
         coinNm: coinNm,
         coinBalance: $('#coin-balance').val()
@@ -61,7 +62,7 @@ var coinFactory = (function () {
             }
             x.push(param.coinNm + '|' + param.coinBalance)
 
-            Cookies.set('coins', x.join('-'), {
+            Cookies.set('coins', x.join('###'), {
               expires: 3650
             });
           }
@@ -82,7 +83,7 @@ var coinFactory = (function () {
     $('#contents').html('');
     var coins = Cookies.get('coins');
     if (coins != '' && coins != null) {
-      coins = coins.split('-')
+      coins = coins.split('###')
       coins.forEach(function (item, idx) {
         var x = item.split('|')
         get(idx, x[0], x[1]);
