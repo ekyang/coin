@@ -1,5 +1,6 @@
 var coinFactory = (function () {
   var krw = 0;
+  var total = 0;
   var init = function () {
     // Workaround for bug in mouse item selection
 
@@ -86,6 +87,7 @@ var coinFactory = (function () {
   };
 
   var loadCoins = function () {
+    total = 0;
     $('#contents').html('');
     var coins = Cookies.get('coins');
     if (coins != '' && coins != null) {
@@ -112,9 +114,9 @@ var coinFactory = (function () {
         var percentChangeStr = '<span style="color:' + percentChange1hColor + '"> (1H : ' + percentChange1h + '%)</span> <span style="color:' + percentChange24hColor + '">(24H : ' + percentChange24h + '%)</span>'
 
         var krwBalance = 0;
-        if (balance > 0) {
-          krwBalance = usd * krw * balance;
-        }
+        krwBalance = usd * krw * balance;
+        total = total + krwBalance
+        $('#total').text('총 자산: ' + comma(total) + '원')
 
         var x = template({
           idx: idx,
