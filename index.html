@@ -5,15 +5,12 @@
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width ">
 	<meta name="format-detection" content="telephone=no">
 	<title>Coin Monitoring</title>
-	<script src="//code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="  crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/buttons.css" />
 </head>
 <body>
 <div id="contents"></div>
-<div id="input-wrap"></div>
 <div id="btn-wrap">
 	 <button class="button button-royal button-circle button-giant"  data-toggle="modal" data-target="#myModalHorizontal" id="btn-plus"><i class="fa fa-plus"></i></button>
 </div>
@@ -61,8 +58,10 @@
         </div>
     </div>
 </div>
-<script src="/src/coin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script type="text/javascript" src="/src/coin.min.js"></script>
 <script type="text/javascript">
 	var coin = coinFactory();
 	coin.init();
