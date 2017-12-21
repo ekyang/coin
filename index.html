@@ -5,14 +5,14 @@
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width ">
 	<meta name="format-detection" content="telephone=no">
 	<title>Coin Monitoring</title>
-	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/buttons.css" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/buttons.css" />
 </head>
 <body>
 <div id="contents"></div>
-<div id="btn-wrap">
-	 <button class="button button-royal button-circle button-giant"  data-toggle="modal" data-target="#myModalHorizontal" id="btn-plus"><i class="fa fa-plus"></i></button>
+<div id="btn-wrap" style="position: fixed;bottom: 10px;right: 10px;">
+	 <button class="button button-royal button-circle button-giant" data-toggle="modal" data-target="#myModalHorizontal" id="btn-plus"><i class="fa fa-plus"></i></button>
 </div>
 <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" 
      aria-labelledby="myModalLabel" aria-hidden="true">
@@ -37,7 +37,7 @@
                     <label  class="col-sm-2 control-label"
                               for="coin-name">코인명</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="coin-name" placeholder="코인명"/>
+                        <input type="email" class="form-control" id="coin-name" placeholder="코인명" autocomplete="off" spellcheck="false"/>
                     </div>
                   </div>
                   <div class="form-group">
@@ -62,9 +62,12 @@
         src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
         crossorigin="anonymous"></script>
-<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-<script type="text/javascript" src="src/coin.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+<script type="text/javascript" src="src/bootstrap3-typeahead.min.js"></script>
+<script type="text/javascript" src="src/coin.js"></script>
+
 <script type="text/javascript">
 	var coin = coinFactory();
 	coin.init();
