@@ -133,10 +133,10 @@ var coinFactory = (function () {
     data.coinNm = data.coinNm.toLowerCase();
     var h = [],
       k = 0;
-    h[k++] = '<div class="coinmarketcap-currency-widget">';
+    h[k++] = '<div class="coinmarketcap-currency-widget" style="margin: 10px;">';
     h[k++] = '    <div style="border:2px solid #E4E6EB;border-radius: 10px;font-family: \'Helvetica Neue\',Helvetica,Arial,sans-serif;min-width:285px;">';
     h[k++] = '        <div>';
-    h[k++] = '            <div style="float:right;width:77%;border: 0px solid #000;text-align:left;padding:5px 0px;line-height:30px;"> <span style="font-size: 18px;"><a href="http://coinmarketcap.com/currencies/' + data.coinNm + '/?utm_medium=widget&amp;utm_campaign=cmcwidget&amp;utm_source=mdev.spicus.com&amp;utm_content=' + data.coinNm + '" target="_blank" style="text-decoration: none; color: rgb(66, 139, 202);">' + data.coinNm.toUpperCase() + (data.krwBalance > 0 ? (" ( " + comma(data.krwBalance.toFixed(0)) + "원 )") : "") + '</a></span> <br> <span style="font-size: 13px;">' + data.price + '</span><button class="button button-caution button-circle button-small btn-delete" style="position: absolute;right: 0;" data-idx="' + data.idx + '"><i class="fa fa-times"></i></button>';
+    h[k++] = '            <div style="float:right;width:77%;border: 0px solid #000;text-align:left;padding:5px 0px;line-height:30px;"> <span style="font-size: 18px;"><a href="http://coinmarketcap.com/currencies/' + data.coinNm + '/?utm_medium=widget&amp;utm_campaign=cmcwidget&amp;utm_source=mdev.spicus.com&amp;utm_content=' + data.coinNm + '" target="_blank" style="text-decoration: none; color: rgb(66, 139, 202);">' + data.coinNm.toUpperCase() + (data.krwBalance > 0 ? (" ( " + comma(data.krwBalance.toFixed(0)) + "원 )") : "") + '</a></span> <br> <span style="font-size: 13px;">' + data.price + '</span><button class="button button-caution button-circle button-small btn-delete" style="position: absolute;right: 25px;" data-idx="' + data.idx + '"><i class="fa fa-times"></i></button>';
     h[k++] = '            </div>';
     h[k++] = '            <div style="text-align:center;padding:5px 0px;width:23%;"><img src="https://files.coinmarketcap.com/static/img/coins/64x64/' + data.coinNm + '.png"></div>';
     h[k++] = '        </div>';
